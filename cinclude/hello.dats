@@ -15,10 +15,7 @@ main0 () = {
   val th_id = 5
   val nthreads = 32
   %{
-    {
-    int y;
-    y = 7;
-    }
+    int x = 7;
   %}
   val () = println!(th_id)
   val () = if th_id = 0 
@@ -27,10 +24,6 @@ main0 () = {
   else
     ()
   val () = println! ("Hello world!") // English
-  %{
-    int x;
-    x = 7;
-  %}
 } // end of [main0]
 
 (* ****** ****** *)
