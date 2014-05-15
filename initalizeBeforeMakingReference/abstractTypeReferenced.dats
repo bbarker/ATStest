@@ -9,7 +9,7 @@
 
 
 (* Normally in a SATS file *)
-abst@ype foo_abstype = ptr
+abstype foo_abstype = ptr
 typedef foo_type = foo_abstype
 
 
@@ -18,7 +18,7 @@ typedef foo_type = foo_abstype
 (* ****** ****** *)
 
 typedef foo_concrete =
-@{
+'{
 , m = int 
 , n = int 
 }
