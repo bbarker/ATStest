@@ -46,10 +46,12 @@ val () = data.n := n_in
 
 
 // This does too (by itself)
-val () = assertloc(m_in > 2)
-val () = assertloc(n_in > 2) 
+local
+val () = assertloc(data.m > 2)
+val () = assertloc(data.n > 2) 
+in end
 val mn_j = data.m * data.n
-prval mn_iGt0pf = m_times_n_Gt0(m_in, n_in, mn_j)
+prval mn_iGt0pf = m_times_n_Gt0(data.m, data.n, mn_j)
 
 
 // This works
