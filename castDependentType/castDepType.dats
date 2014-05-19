@@ -35,13 +35,13 @@ typedef testtype = '(int, int)
 val test = $UN.cast{board_point}{testtype}('(my_zero, my_zero))
 val _ = $showtype test 
 
-
+// this doesn't
 val test = ($UN.cast{board_point}{testtype}('(my_zero, my_zero))):board_point
 val _ = $showtype test 
 
 
 // this doesn't
-//val test: board_point = $UN.cast{board_point}{testtype}('(my_zero, my_zero))
+val test: board_point = $UN.cast{board_point}{testtype}('(my_zero, my_zero))
 
 val () = println!("testing")
 }
