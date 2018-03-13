@@ -7,12 +7,13 @@
 
 //TODO: add guards to make sure nn is non-negative
 fun collatz(nn: int): int = let
-  val newN: int =
+  val newN = (
     if nn % 2 = 0 then nn / 2
-    else 3 * nn + 1 
+    else 3 * nn + 1
+  ): int
   val () =  println! ("-> ", nn)  
 in 
-  if (newN: int) != (1: int) then collatz(newN)
+  if newN != 1 then collatz(newN)
   else newN
 end
 
