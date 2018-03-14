@@ -4,15 +4,18 @@ Run patscc -o hello hello.dats
 
 *)
 
-implement main0
+#include "share/atspre_staload.hats"
+
+implement main0{n}
 (argc, argv): void = {
 
-// TODO: def loop: ...
-// TODO: see https://github.com/ashalkhakov/atscntrb-as-getopt/blob/master/DATS/getopt.dats for ideas
+  fun echoArgs{i:nat | i < n}
+  (ii: int(i), argv: !argv(n)): void = {
+    val () = println!("arg ", ii, " is ", argv[ii])
+    val () = if ii + 1 < argc then echoArgs(ii + 1, argv) 
+  }
 
-//  val _ = $showtype argv
-  val _ = println!("Hello, ", "something", "!")
-  
+  val () = echoArgs(0, argv)
 }
 
 
